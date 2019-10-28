@@ -26,7 +26,11 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=['text'])
 def check_id_sticker(message):
-    bot.send_message(message.chat.id, search(message))
+    for i in range(myArray.__len__()):
+        if message.text == myArray[i].get_value():
+            test = i
+            repr(myArray[test])
+    bot.send_message(message.chat.id, repr(myArray[test]))
 
 
 bot.polling(timeout=60)
